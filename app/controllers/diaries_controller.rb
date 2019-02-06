@@ -1,5 +1,6 @@
 class DiariesController < ApplicationController
-  before_action :set_diary, only: [:show, :edit, :update, :destroy]
+  before_action :set_diary, only: [:show, :edit, :update, :destroy] 
+                
 
   # GET /diaries
   # GET /diaries.json
@@ -62,6 +63,7 @@ class DiariesController < ApplicationController
   end
 
   private
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_diary
       @diary = Diary.find(params[:id])
