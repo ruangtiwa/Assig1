@@ -44,7 +44,7 @@ class DiariesController < ApplicationController
         end
       end
     else 
-      redirect_back(fallback_location: "/users") 
+      redirect_back(fallback_location: "/users/sign_in") 
       flash.alert = "Sign in first!"
     end 
   end

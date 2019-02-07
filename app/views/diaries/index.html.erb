@@ -1,11 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Diaries</h1>
+  <br>
+
+  <h2>Your memories</h2>  
+
+  <p> Create your new diary >> <%= link_to 'New Diary', new_diary_path %> </p>
 
 <table>
+
   <thead>
     <tr>
-      <th>Name</th>
+      <th width="10">Name</th>
       <th>Detail</th>
       <th>Date</th>
       <th colspan="3"></th>
@@ -28,8 +33,11 @@
       <% end %>
     <% end %>
   </tbody>
-</table>
+        
+  </table>
+
+
 
 <br>
 
- <%= link_to 'New Diary', new_diary_path %>
+ 
