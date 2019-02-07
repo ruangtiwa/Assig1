@@ -5,8 +5,12 @@ class DiariesController < ApplicationController
   # GET /diaries
   # GET /diaries.json
   def index
-    @user = current_user.id
-    @diaries = current_user.diaries
+    if user_signed_in?
+      @user = current_user.id
+      @diaries = current_user.diaries
+    else 
+      redirect_to "/users/sign_in" , notice: 'Log in first!'
+    end
   end
 
   # GET /diaries/1
