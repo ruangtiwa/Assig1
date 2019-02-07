@@ -12,16 +12,20 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @diaries.each do |diary| %>
-      <tr>
-        <td><%= diary.name %></td>
-        <td><%= diary.detail %></td>
-        <td><%= diary.date %></td>
-        <td><%= link_to 'Show', diary %></td>
-        <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
-        <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <tbody> 
+    <% if @diaries == nil %> 
+      <h1>Nothing</h1>
+    <% else %>
+      <% @diaries.each do |diary| %>
+        <tr>
+          <td><%= diary.name %></td>
+          <td><%= diary.detail %></td>
+          <td><%= diary.date %></td>
+          <td><%= link_to 'Show', diary %></td>
+          <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
+          <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
